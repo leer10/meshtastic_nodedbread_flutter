@@ -4,13 +4,11 @@ import 'interface.dart';
 
 class FakeInterface implements BluetoothInterface {
   @override
-  // TODO: implement isAvailable
   Future<bool> get isAvailable => Future.delayed(Duration(
         seconds: 1,
       )).then((value) => true);
 
   @override
-  // TODO: implement isOn
   Future<bool> get isOn => Future.delayed(Duration(
         seconds: 1,
       )).then((value) => true);
@@ -46,11 +44,9 @@ class FakeScanResult implements ScanResult {
 
 class FakeAdvertisementData implements AdvertisementData {
   @override
-  // TODO: implement connectable
   bool get connectable => true;
 
   @override
-  // TODO: implement localName
   String get localName => "Meshtastic Device";
 
   @override
@@ -62,7 +58,6 @@ class FakeAdvertisementData implements AdvertisementData {
   Map<String, List<int>> get serviceData => throw UnimplementedError();
 
   @override
-  // TODO: implement serviceUuids
   List<String> get serviceUuids => ["6ba1b218-15a8-461f-9fa8-5dcae273eafd"];
 
   @override
@@ -106,7 +101,6 @@ class FakeDevice implements BluetoothDevice {
   Stream<int> get mtu => throw UnimplementedError();
 
   @override
-  // TODO: implement name
   String get name => "Meshtastic Device";
 
   @override
@@ -130,6 +124,5 @@ class FakeDevice implements BluetoothDevice {
 
 class FakeDeviceIdentifier implements DeviceIdentifier {
   @override
-  // TODO: implement id
   String get id => "fakeid";
 }
