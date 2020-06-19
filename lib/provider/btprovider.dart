@@ -1,18 +1,26 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart' as Foundation;
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:meshtastic_nodedbread_flutter/provider/provider.dart';
 import 'package:provider/provider.dart';
 
+import 'fakeimplementation.dart';
+import 'interface.dart';
+
 enum BluetoothLogicState { off, on, unset, unavailable }
 
 class BluetoothLogic with ChangeNotifier {
-  BluetoothDevice bluetoothDevice;
-  FlutterBlue flutterBlue;
+  BluetoothInterface flutterBlue;
   BluetoothLogicState bluetoothState = BluetoothLogicState.unset;
   var scanResults;
 
   BluetoothLogic() {
-    flutterBlue = FlutterBlue.instance;
+    const isFake = true; //change to false/true to get in and out of fake
+    if (Foundation.kDebugMode && isFake) {
+      flutterBlue = FakeInterface();
+    } else {
+      flutterBlue = FlutterBlueInterface();
+    }
     checkForBluetooth();
   }
 
