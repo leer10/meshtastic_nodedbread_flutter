@@ -1,17 +1,10 @@
 # meshtastic_nodedbread_flutter
 
-A new Flutter project.
+![Screenshot](./flutter_02.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+This is a demo application for reading the NodeDB from a Meshtastic device using the flutter_blue library, which will allow operation on both iOS and Android devices. 
 
-A few resources to get you started if this is your first Flutter project:
+Currently I only have the Bluetooth search list written. I still need to write the actual connecting and interaction with the device. 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# meshtastic_nodedbread_flutter
+I do not have a Meshtastic node myself, so on the mock branch is where I've written an alternative version of the app that uses a fake implementation of the bluetooth library that will pretend a Meshtastic device is present. I still need to write the device logic of reading/writing from ToRadio/FromRadio and use the appropriate protobufs, so that will be happening soon.
